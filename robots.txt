@@ -1,0 +1,9 @@
+# The questionnaire is public and meant to be found and shared.
+User-agent: *
+Allow: /
+
+# Nothing under here is a page.
+Disallow: /.netlify/
+Disallow: /netlify/
+Disallow: /tools/
+Disallow: /assets/media/

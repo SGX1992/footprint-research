@@ -1,0 +1,60 @@
+# Deploy config for research.footprint-intelligence.com on Netlify.
+#
+# Netlify is the host that can serve the page and run the submit function from
+# the same origin. If the page stays on GitHub Pages instead, this file still
+# describes the function-only deployment — see README, "Hosting".
+
+[build]
+  publish = "."
+  command = ""
+
+[functions]
+  directory = "netlify/functions"
+  node_bundler = "esbuild"
+
+# The function imports the questionnaire and country list straight from the
+# site's own modules, so the mapping can never drift from the questions.
+[functions."submit"]
+  included_files = ["assets/js/**"]
+
+# The page must never be cached, or a redeployed questionnaire keeps serving
+# the old wording to anyone who has been here before — and old wording with a
+# new version string is exactly the corruption the version field exists to
+# prevent.
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    X-Frame-Options = "DENY"
+    Permissions-Policy = "geolocation=(), microphone=(), camera=(), interest-cohort=()"
+
+# Short freshness on the code so a correction reaches people the same day.
+[[headers]]
+  for = "/assets/js/*"
+  [headers.values]
+    Cache-Control = "public, max-age=600, stale-while-revalidate=86400"
+
+[[headers]]
+  for = "/assets/css/*"
+  [headers.values]
+    Cache-Control = "public, max-age=600, stale-while-revalidate=86400"
+
+# Artwork is swapped by hand and keeps its filename, so a long max-age would
+# leave people looking at a picture that has already been replaced.
+[[headers]]
+  for = "/assets/img/*"
+  [headers.values]
+    Cache-Control = "public, max-age=3600, stale-while-revalidate=604800"
+
+[[headers]]
+  for = "/assets/media/*"
+  [headers.values]
+    Cache-Control = "public, max-age=3600, stale-while-revalidate=604800"
+
+# Never cached and never stored by an intermediary: it carries a response.
+[[headers]]
+  for = "/.netlify/functions/*"
+  [headers.values]
+    Cache-Control = "no-store"

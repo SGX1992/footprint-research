@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>The Age of Business Resilience &amp; Sustainable Transformation — Footprint Intelligence Research</title>
+<meta name="description" content="Insights from sustainability leaders across Europe on what is driving sustainability teams today and where they see the greatest opportunities for progress and business value.">
+<meta name="theme-color" content="#050505">
+<link rel="icon" href="assets/img/favicon.png">
+<link rel="preload" as="image" href="assets/img/glow.png">
+<link rel="preload" as="font" type="font/woff2" href="assets/fonts/poppins-700.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="assets/fonts/poppins-400.woff2" crossorigin>
+<link rel="stylesheet" href="assets/css/style.css?v=20260910120425">
+<meta property="og:title" content="The Age of Business Resilience &amp; Sustainable Transformation">
+<meta property="og:description" content="Where does sustainability create real business value? Two minutes, eight questions, from sustainability leaders across Europe.">
+<meta property="og:type" content="website">
+</head>
+<body>
+
+<a class="sr-only" href="#main">Skip to content</a>
+
+<!-- ============================================================ landing -->
+<main id="main">
+<div class="screen" id="landing">
+
+  <header class="hero on-dark">
+    <div class="hero__bg" aria-hidden="true">
+      <img src="assets/img/glow.png" alt="">
+    </div>
+
+    <div class="masthead">
+      <img src="assets/img/fi-wordmark.png" alt="Footprint Intelligence">
+      <span>Research</span>
+    </div>
+
+    <div class="hero__body">
+      <p class="hero__study" id="studyTitle">The Age of Business Resilience &amp; Sustainable Transformation</p>
+      <div class="rule" id="heroRule"></div>
+      <h1 class="display" id="heroHeadline">Where does sustainability create real business value?</h1>
+      <p class="deck hero__deck" id="heroDeck">Insights from sustainability leaders across Europe.</p>
+
+      <div class="cta-row">
+        <button class="btn" id="startBtn" type="button">
+          <span id="startLabel">Take the survey</span>
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="cta-aside">
+          <p class="cta-aside__time" id="ctaTime"></p>
+          <p class="fine" style="color:rgba(255,255,255,.6)">
+            For people working on sustainability, ESG and transformation.
+            Findings will be reported in aggregate.
+          </p>
+        </div>
+      </div>
+
+      <ol class="proof" id="benefitsList" aria-label="What you get for contributing"></ol>
+      <p class="fine hero__meta" id="beginMeta"></p>
+    </div>
+  </header>
+
+
+</div>
+
+<!-- ============================================================ survey -->
+<div class="screen" id="survey" hidden>
+  <div class="topbar">
+    <div class="topbar__inner">
+      <button class="topbar__home" id="homeBtn" type="button" aria-label="Footprint Intelligence — back to the start"><img src="assets/img/fi-wordmark.png" alt=""></button>
+      <p class="topbar__title">Business Resilience &amp; Sustainable Transformation</p>
+      <p class="topbar__count" id="topCount"></p>
+    </div>
+    <div class="progress">
+      <div class="progress__fill" id="progressFill"></div>
+    </div>
+  </div>
+
+  <div class="layout">
+    <nav class="rail" id="rail" aria-label="Survey sections"></nav>
+    <div class="stage" id="stage"></div>
+  </div>
+
+  <div class="controls">
+    <div class="controls__inner">
+      <button class="btn btn--ghost" id="backBtn" type="button">Back</button>
+      <p class="controls__status" id="controlStatus"></p>
+      <button class="btn" id="nextBtn" type="button">Continue</button>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================ end states -->
+<div class="screen end on-dark" id="done" hidden>
+  <div class="hero__bg" aria-hidden="true"><img src="assets/img/glow.png" alt=""></div>
+  <div class="wrap wrap--read" id="doneBody"></div>
+</div>
+</main>
+
+<script type="module" src="assets/js/main.js?v=20260910120425"></script>
+</body>
+</html>
